@@ -30,7 +30,6 @@ const pizzaController = {
             res.status(400);
 
         });
-
 },
 
 createPizza({ body }, res) {
