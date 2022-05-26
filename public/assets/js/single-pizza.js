@@ -133,9 +133,6 @@ function handleNewCommentSubmit(event) {
     });
 }
 
-  const formData = { commentBody, writtenBy };
-
-
 function handleNewReplySubmit(event) {
   event.preventDefault();
 
