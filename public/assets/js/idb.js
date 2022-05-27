@@ -5,7 +5,7 @@ let db;
 // establish a connection to IndexedDB database called 'pizza_hunt' and set it to version 1
 const request = indexedDB.open('pizza_hunt', 1);
 
-// this event will emit if the database version changes (nonexistant to version 1, v1 to v2, etc.)
+
 request.onupgradeneeded = function(event) {
     // save a reference to the database 
     const db = event.target.result;
@@ -51,9 +51,6 @@ function saveRecord(record) {
   
     // get all records from store and set to a variable
     const getAll = pizzaObjectStore.getAll();
-  
-   
-  }
 
   // upon a successful .getAll() execution, run this function
 getAll.onsuccess = function() {
@@ -84,8 +81,10 @@ getAll.onsuccess = function() {
       .catch(err => {
         console.log(err);
       });
-  }
-};
+    }
+  };
+}
+
 
 // listen for app coming back online
 window.addEventListener('online', uploadPizza);
