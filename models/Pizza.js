@@ -5,11 +5,15 @@ const PizzaSchema = new Schema(
     {
 
     pizzaName: {
-        type: String
+        type: String,
+        required: true,
+        trie: true
     },
 
     createdBy: {
-        type: String
+        type: String,
+        required: true,
+        trime: true
     },
 
     createdAt: {
@@ -22,6 +26,8 @@ const PizzaSchema = new Schema(
     size: {
 
         type: String,
+        required: true,
+        enum: ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'],
         default: 'Large'
     },
 
